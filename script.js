@@ -1,6 +1,7 @@
 var marker1 = { lat: 46.851931, lng: -71.2478621 };
 var user = null;
 var x = document.getElementById('demo');
+var r = document.getElementById('result');
 
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(showPosition);
@@ -16,7 +17,16 @@ function showPosition(position) {
 
   var n = arePointsNear(marker1, user, 0.005);
   dist = getDistanceFromLatLonInKm(marker1.lat, marker1.lng, user.lat, user.lng);
-  x.innerHTML = 'Distance from point: ' + dist + 'm<br>' + 'Your position: ' + user.lat + ', ' + user.lng + '<br>' + 'Marker\'s position: ' + marker1.lat + ', ' + marker1.lng + '<br>' + n;
+  x.innerHTML = 'Distance from point: ' + dist + 'm<br>' + 'Your position: ' + user.lat + ', ' + user.lng + '<br>' + 'Marker\'s position: ' + marker1.lat + ', ' + marker1.lng;
+  if(n == true){
+    r.innerHTML = 'True';
+    r.className = '';
+    r.classList.add("true");
+  }else{
+    r.innerHTML = 'False';
+    r.className = '';
+    r.classList.add("false");
+  }
 }
 
 function arePointsNear(checkPoint, centerPoint, km) {
