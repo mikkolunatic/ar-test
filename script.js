@@ -1,4 +1,4 @@
-var marker1 = { lat: 46.851931, lng: -71.2478621 };
+var marker1 = { lat: 46.85065184837769, lng: -71.24735675218179 };
 var user = null;
 var x = document.getElementById('demo');
 var r = document.getElementById('result');
@@ -15,7 +15,7 @@ function initMap() {
     // Create marker
     var marker = new google.maps.Marker({
       map: map,
-      position: new google.maps.LatLng(46.851931, -71.2478621),
+      position: new google.maps.LatLng(46.85065184837769, -71.24735675218179),
       title: 'Some location'
     });
 
