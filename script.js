@@ -9,6 +9,7 @@ if (navigator.geolocation) {
   console.log("Geolocation is not supported by this browser.");
 }
 
+
 //Event that triggers the GPS location
 function showPosition(position) {
   user = { lat: position.coords.latitude, lng: position.coords.longitude };
