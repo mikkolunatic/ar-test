@@ -3,6 +3,30 @@ var user = null;
 var x = document.getElementById('demo');
 var r = document.getElementById('result');
 
+//maps
+var map, infoWindow;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 46.851931, lng: -71.2478621 },
+        zoom: 20
+    });
+
+    // Create marker
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(46.851931, -71.2478621),
+      title: 'Some location'
+    });
+
+    // Add circle overlay and bind to marker
+    var circle = new google.maps.Circle({
+      map: map,
+      radius: 5,    // 10 miles in metres
+      fillColor: '#AA0000'
+    });
+    circle.bindTo('center', marker, 'position');
+}
+
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(showPosition);
 } else {
@@ -28,6 +52,15 @@ function showPosition(position) {
     r.className = '';
     r.classList.add("false");
   }
+
+  var marker = new google.maps.Marker({
+      position: user,
+      map: map,
+      title: 'Hello World!',
+      icon: 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png',
+  });
+
+  map.setCenter(user);
 }
 
 function arePointsNear(checkPoint, centerPoint, km) {
@@ -57,3 +90,5 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
+
+//Map

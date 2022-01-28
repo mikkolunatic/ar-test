@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GeoAR.js demo</title>
     <link rel="stylesheet" href="./style.css">
@@ -12,5 +13,37 @@
   <p id="demo"></p>
   <p id="result">True<p>
 
+  <div id="map" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+
+var mapProp= {
+  center:new google.maps.LatLng(46.851931,-71.2478621),
+  zoom:5,
+};
+
+var map  = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+// Create marker
+var marker = new google.maps.Marker({
+  map: map,
+  position: new google.maps.LatLng(46.851931, -71.2478621),
+  title: 'Some location'
+});
+
+// Add circle overlay and bind to marker
+var circle = new google.maps.Circle({
+  map: map,
+  radius: 5,    // 10 miles in metres
+  fillColor: '#AA0000'
+});
+circle.bindTo('center', marker, 'position');
+map.setZoom(20);
+
+}
+</script>
+
   <script src="./script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6wWNlns4DkxCkftdp84q5CxsZAQqXaw&callback=initMap"></script>
 </body>
