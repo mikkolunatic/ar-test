@@ -2,6 +2,7 @@ var marker1 = { lat: 46.851931, lng: -71.2478621 };
 var user = null;
 var x = document.getElementById('demo');
 var r = document.getElementById('result');
+var compass = null;
 
 //maps
 var map, infoWindow;
@@ -53,13 +54,18 @@ function showPosition(position) {
     r.classList.add("false");
   }
 
-  var marker = new google.maps.Marker({
+  // create the marker if it doesn't exist yet
+  if(!compass) {
+    compass = new google.maps.Marker({
       position: user,
       map: map,
-      title: 'Hello World!',
-      icon: 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png',
-  });
-
+      title: 'My position',
+      icon: './assets/blue-dot.png',
+    });
+  } else {
+    // update the markers position
+    compass.setPosition(user);
+  }
   map.setCenter(user);
 }
 
