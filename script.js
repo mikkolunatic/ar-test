@@ -29,9 +29,17 @@ function initMap() {
 }
 
 if (navigator.geolocation) {
-  navigator.geolocation.watchPosition(showPosition);
+  navigator.geolocation.watchPosition(showPosition, error, {
+    enableHighAccuracy: true,
+    timeout: 3000,
+    maximumAge: 0
+  });
 } else {
   console.log("Geolocation is not supported by this browser.");
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
 
