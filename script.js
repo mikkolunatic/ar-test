@@ -31,8 +31,8 @@ function initMap() {
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(showPosition, error, {
     enableHighAccuracy: true,
-    timeout: 3000,
-    maximumAge: 0
+    timeout: 10000,
+    maximumAge: 10000
   });
 } else {
   console.log("Geolocation is not supported by this browser.");
