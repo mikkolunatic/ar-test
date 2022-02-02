@@ -22,7 +22,7 @@ function initMap() {
     // Add circle overlay and bind to marker
     var circle = new google.maps.Circle({
       map: map,
-      radius: 5,    // 10 miles in metres
+      radius: 10,    // 10 miles in metres
       fillColor: '#AA0000'
     });
     circle.bindTo('center', marker, 'position');
@@ -49,7 +49,7 @@ function showPosition(position) {
   console.log(user);
 
 
-  var n = arePointsNear(marker1, user, 0.005);
+  var n = arePointsNear(marker1, user, 0.010);
   dist = getDistanceFromLatLonInKm(marker1.lat, marker1.lng, user.lat, user.lng);
   x.innerHTML = 'Distance from point: ' + dist + 'm<br>' + 'Your position: ' + user.lat + ', ' + user.lng + '<br>' + 'Marker\'s position: ' + marker1.lat + ', ' + marker1.lng;
   if(n == true){
