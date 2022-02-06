@@ -43,11 +43,13 @@ function onLocationFound(e) {
       //Set the view to position if it is the first time
       map.setView(e.latlng, 19);
       current_position = L.marker(e.latlng, {icon: blueDot}).addTo(map);
-      current_accuracy = L.circle(e.latlng, radius).addTo(map);
+      current_accuracy = L.circle(e.latlng, {radius: radius, stroke: false}).addTo(map);
     }
 
     if(arePointsNear(marker1, e.latlng, 0.025)){
       testCirlce.setStyle({color: 'green'});
+    }else{
+      testCirlce.setStyle({color: '#B8B8B8'});
     }
     // dist = getDistanceFromLatLonInKm(marker1.lat, marker1.lng, user.lat, user.lng);
     // x.innerHTML = 'Distance from point: ' + dist + 'm<br>' + 'Your position: ' + user.lat + ', ' + user.lng + '<br>' + 'Marker\'s position: ' + marker1.lat + ', ' + marker1.lng;
