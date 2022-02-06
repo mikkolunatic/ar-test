@@ -5,11 +5,15 @@ var r = document.getElementById('data');
 var compass = null;
 
 //Maps
-var map = L.map('map').fitWorld();
+var map = L.map('map', {
+    center: [46.8125, -71.2214],
+    zoom: 13
+});
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxNativeZoom: 19,
-    maxZoom: 22
+    maxZoom: 22,
 }).addTo( map );
 
 var current_position, current_accuracy;
@@ -20,6 +24,9 @@ function onLocationFound(e) {
     if (current_position) {
       map.removeLayer(current_position);
       map.removeLayer(current_accuracy);
+    }else{
+      //Set the view to position if it is the first time
+      map.setView(e.latlng, 19);
     }
 
     current_position = L.marker(e.latlng).addTo(map);
@@ -27,7 +34,7 @@ function onLocationFound(e) {
 }
 
 map.on('locationfound', onLocationFound);
-map.locate({setView: true, watch: true, maxZoom: 19, enableHighAccuracy: true, maximumAge: 0});
+map.locate({ watch: true, maxNativeZoom: 19, maxZoom: 22, enableHighAccuracy: true, maximumAge: 0});
 
 
 // function arePointsNear(checkPoint, centerPoint, km) {
