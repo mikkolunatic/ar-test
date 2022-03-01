@@ -7,6 +7,8 @@ var m;
 var map;
 var current_position, current_accuracy;
 var blueDot, markerUnknow, testCirlce;
+var popup = document.querySelector(".popup");
+var btnFound = document.getElementById('btn-found');
 
 fetch('./assets/js/markers.json').then(function (response) {
 	// The API call was successful!
@@ -55,7 +57,6 @@ function initMap(){
 
 function onClick(e){
   var marker = m.markers[this.options.key];
-  var popup = document.querySelector(".popup");
 
   popup.innerHTML = "<h2>" + marker.name + "</h2><h3>" + marker.street + "</h3>";
   popup.classList.toggle("show");
@@ -80,16 +81,35 @@ function onLocationFound(e) {
     }
 
     //Check if the user position is within the radius of the marker
+		var inRange = false;
+
     m.markers.forEach(function(index, key){
 
       if(arePointsNear(index.coord, e.latlng, 0.015)){ //15 meters
         index.radius.setStyle({color: 'green'});
         index.radius.setRadius(15);
+
+				if(inRange != true){
+					btnFound.classList.add("show");
+					btnFound.setAttribute('onclick', "getToken(" + key + ")");
+				}
+				inRange = true;
+
       }else if(arePointsNear(index.coord, e.latlng, 0.035)){ //35 meters
         index.radius.setStyle({color: 'yellow'});
         index.radius.setRadius(35);
+
+				if(inRange != true){
+					btnFound.classList.remove("show");
+					inRange = false;
+				}
+
       }else{
         index.radius.setStyle({color: '#B8B8B8'});
+				if(inRange != true){
+					btnFound.classList.remove("show");
+					inRange = false;
+				}
       }
     });
 

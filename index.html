@@ -7,6 +7,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GeoAR.js demo</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
@@ -17,6 +18,16 @@
   <!-- VIEW : MAIN MAP -->
   <div id="main-view">
     <div id="map"></div>
+  </div>
+
+  <div id="marker-found" class="floating-section">
+    <div class="content">
+      <h3>Lieu</h3>
+      <div class="rnd-img-container">
+        <img src="assets/images/marker/3/hint.jpg" />
+      </div>
+    </div>
+    <div class="background" style="background-image:url('assets/images/marker/3/hint.jpg')"></div>
   </div>
 
   <!-- VIEW : STAMPS  -->
@@ -33,9 +44,9 @@
 
   <!-- POPUP -->
   <div class="popup">
-    <h2>Nom du lieu 1</h2>
-    <h3>Emplacement du lieu 1</h3>
   </div>
+
+  <button id="btn-found" class="low-flt-btn">J'ai trouvé l'emplacement</button>
 
   <!-- Libraries -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -43,7 +54,8 @@
   crossorigin=""></script>
 
   <!-- App JS -->
-  <script src="./assets/js/map.js"></script>
   <script src="./assets/js/views.js"></script>
+  <script src="./assets/js/map.js"></script>
   <script src="./assets/js/functions.js"></script>
+  <script src="./assets/js/getToken.js"></script>
 </body>
