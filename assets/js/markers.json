@@ -1,34 +1,34 @@
 {
     "markers": [
       {
-        "coord": [ "46.8155104437314", "-71.20757035025596" ],
-        "name": "Nom du lieu 1",
-        "street": "Nom de la rue 1"
+        "coord": [ "46.85046675589393", "-71.24708614046709" ],
+        "name": "Tracteur de Chez Biceps BBQ",
+        "street": "Biceps BBQ - Boulevard Henri-Bourassa"
       },
       {
-        "coord": [ "46.81273642025322", "-71.20499250789987" ],
-        "name": "Nom du lieu 2",
-        "street": "Nom de la rue 2"
+        "coord": [ "46.85215722768032", "-71.2403156404298" ],
+        "name": "Entrée du Parc de l'Oise",
+        "street": "Parc de l'Oise"
       },
       {
-        "coord": [ "46.81206581336637", "-71.20436427698638" ],
-        "name": "Nom du lieu 3",
-        "street": "Nom de la rue 3"
+        "coord": [ "46.85149663775113", "-71.25316036113834" ],
+        "name": "Monument du Club des Lions",
+        "street": "Jonction Boulevard Henri-Bourassa et 3e Avenue E"
       },
       {
         "coord": [ "46.851955657095324", "-71.24779437277681" ],
         "name": "Ma maison",
-        "street": "Nom de la rue 4"
+        "street": "Boulevard Henri-Bourassa"
       },
       {
-        "coord": [ "46.85064461200293", "-71.24724917598094" ],
-        "name": "Nom du lieu 5",
-        "street": "Nom de la rue 5"
+        "coord": [ "46.854116216946345", "-71.25062160686107" ],
+        "name": "Les jardins",
+        "street": "60e Rue E"
       },
       {
-        "coord": [ "46.85127187816682", "-71.24557950753943" ],
-        "name": "Nom du lieu 6",
-        "street": "Nom de la rue 6"
+        "coord": [ "46.8544732716788", "-71.24216607922094" ],
+        "name": "Vue sur Québec",
+        "street": "Parc de l'Oise"
       }
     ]
 }

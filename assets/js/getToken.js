@@ -1,11 +1,11 @@
 function getToken(id){
   //Get the token on click
-  if(id){
+  if(id >= 0){
     var marker = m.markers[id];
 
     var html="";
-    html += "<div class=\"content\">";
-    html += "      <h3>" + marker.name + "<\/h3>";
+    html += "<div class='street'><span><img src='assets/images/icons/location-icon.svg' />" + marker.street + "<\/span><\/div>";
+    html += "   <div class=\"content\">";
     html += "      <div class=\"rnd-img-container\">";
     html += "        <img src=\"assets\/images\/marker\/" + id + "\/hint.jpg\" \/>";
     html += "      <\/div>";
