@@ -106,6 +106,7 @@ function onLocationFound(e) {
 
       }else{
         index.radius.setStyle({color: '#B8B8B8'});
+				index.radius.setRadius(35);
 				if(inRange != true){
 					btnFound.classList.remove("show");
 					inRange = false;
