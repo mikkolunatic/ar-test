@@ -14,5 +14,8 @@ function getToken(id){
 
     setMarkerFoundViewContent(html);
     setMarkerFoundView(true);
+
+    //Mark the marker as found
+    m.markers[id].lmarker.setIcon(markerKnown);
   }
 }

@@ -45,9 +45,15 @@ function initMap(){
       iconSize: [21, 30], // size of the icon
       iconAnchor: [10.5, 28]
   });
+	markerKnown = L.icon({
+      iconUrl: './assets/images/marker-known.png',
+
+      iconSize: [21, 30], // size of the icon
+      iconAnchor: [10.5, 28]
+  });
 
   m.markers.forEach(function(index, key){
-    L.marker(index.coord, {icon: markerUnknow, key: key}).on('click', onClick).addTo(map);
+    m.markers[key]["lmarker"] = L.marker(index.coord, {icon: markerUnknow, key: key}).on('click', onClick).addTo(map);
     m.markers[key]["radius"] = (L.circle(index.coord, 35).addTo(map));
   });
 
