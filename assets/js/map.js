@@ -56,10 +56,7 @@ function initMap(){
 }
 
 function onClick(e){
-  var marker = m.markers[this.options.key];
-
-  popup.innerHTML = "<h2>" + marker.name + "</h2><h3>" + marker.street + "</h3>";
-  popup.classList.toggle("show");
+  showPopup(this.options.key)
 }
 
 //Error on location not onLocation not found - FALSE

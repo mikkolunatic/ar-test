@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/popup.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
@@ -19,6 +20,22 @@
   <!-- VIEW : MAIN MAP -->
   <div id="main-view">
     <div id="map"></div>
+  </div>
+
+  <!-- POPUP -->
+  <div id="marker-popup" class="popup-group">
+    <div class="popup">
+      <div class="street"><span><img src="assets/images/icons/location-icon.svg" />Nom du lieu</span></div>
+      <input type="image" onclick="setMarkerPopupView(false)" class="close" src="assets/images/icons/close.png" />
+      <div class="content">
+        <img class="trophy" src="assets/images/icons/unknown.png" />
+        <h3 id="marker-name">???</h3>
+        <div class="rnd-img-container">
+          <img src="assets/images/marker/3/hint.jpg" />
+        </div>
+        <p id="hint-name">Plaque François-Xavier Garneau</p>
+      </div>
+    </div>
   </div>
 
   <div id="marker-found" class="floating-section">
@@ -43,10 +60,6 @@
   <div id="settings-view">
   </div>
 
-  <!-- POPUP -->
-  <div class="popup">
-  </div>
-
   <button id="btn-found" class="low-flt-btn">J'ai trouvé l'emplacement</button>
 
   <!-- Libraries -->
@@ -59,4 +72,5 @@
   <script src="./assets/js/map.js"></script>
   <script src="./assets/js/functions.js"></script>
   <script src="./assets/js/getToken.js"></script>
+  <script src="./assets/js/showPopup.js"></script>
 </body>
