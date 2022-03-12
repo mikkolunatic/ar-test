@@ -4,6 +4,8 @@ Composer: https://getcomposer.org/
 
 Wampserver: https://www.wampserver.com/en/
 
+npm (possibilité d'instalation via node js)
+
 Php:
 
 2 méthodes:
@@ -25,6 +27,10 @@ Les commandes à exécuter lors de l'ouverture du projet (dans le terminal):
 Mettre à jour les dépendances. À exécuter dès qu'on ouvre un nouveau projet
 
 - composer update --no-scripts
+
+Build les assets
+
+- npm run dev
 
 Permet d'exécuter les migrations et les seeds vers la bd
 
