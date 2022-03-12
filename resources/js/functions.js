@@ -17,7 +17,6 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
 
 //Return if user position is close to the marker
 function arePointsNear(checkPoint, centerPoint, km) {
-
     var ky = 40000 / 360;
     var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
     var dx = Math.abs(centerPoint.lng - checkPoint[1]) * kx;

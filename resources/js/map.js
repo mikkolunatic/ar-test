@@ -14,7 +14,10 @@ fetch('/api/markers').then(function (response) {
 	// The API call was successful!
 	return response.json();
 }).then(function (data) {
-	m = data;
+  m = {markers : []};
+  data.data.forEach(function(marker){
+    m.markers.push(marker);
+  })
   initMap();
 }).catch(function (err) {
 	// There was an error
@@ -53,8 +56,8 @@ function initMap(){
   });
 
   m.markers.forEach(function(index, key){
-    m.markers[key]["lmarker"] = L.marker(index.coord, {icon: markerUnknow, key: key}).on('click', onClick).addTo(map);
-    m.markers[key]["radius"] = (L.circle(index.coord, 35).addTo(map));
+    m.markers[key]["lmarker"] = L.marker([index.long, index.lat], {icon: markerUnknow, key: key}).on('click', onClick).addTo(map);
+    m.markers[key]["radius"] = (L.circle([index.long, index.lat], 35).addTo(map));
   });
 
   map.on('locationfound', onLocationFound);
@@ -88,7 +91,7 @@ function onLocationFound(e) {
 
     m.markers.forEach(function(index, key){
 
-      if(arePointsNear(index.coord, e.latlng, 0.015)){ //15 meters
+      if(arePointsNear([index.long, index.lat], e.latlng, 0.015)){ //15 meters
         index.radius.setStyle({color: 'green'});
         index.radius.setRadius(15);
 
@@ -98,7 +101,7 @@ function onLocationFound(e) {
 				}
 				inRange = true;
 
-      }else if(arePointsNear(index.coord, e.latlng, 0.035)){ //35 meters
+      }else if(arePointsNear([index.long, index.lat], e.latlng, 0.035)){ //35 meters
         index.radius.setStyle({color: 'yellow'});
         index.radius.setRadius(35);
 
@@ -116,5 +119,11 @@ function onLocationFound(e) {
 				}
       }
     });
-
+}
+function arePointsNear(checkPoint, centerPoint, km) {
+  var ky = 40000 / 360;
+  var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+  var dx = Math.abs(centerPoint.lng - checkPoint[1]) * kx;
+  var dy = Math.abs(centerPoint.lat - checkPoint[0]) * ky;
+  return Math.sqrt(dx * dx + dy * dy) <= km;
 }
