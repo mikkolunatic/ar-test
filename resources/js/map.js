@@ -10,7 +10,7 @@ var blueDot, markerUnknow, testCirlce;
 var popup = document.querySelector(".popup");
 var btnFound = document.getElementById('btn-found');
 
-fetch('./assets/js/markers.json').then(function (response) {
+fetch('/api/markers').then(function (response) {
 	// The API call was successful!
 	return response.json();
 }).then(function (data) {
@@ -35,18 +35,18 @@ function initMap(){
   }).addTo( map );
 
   blueDot = L.icon({
-      iconUrl: './assets/images/blue-dot.png',
+      iconUrl: './images/blue-dot.png',
 
       iconSize: [25, 25], // size of the icon
   });
   markerUnknow = L.icon({
-      iconUrl: './assets/images/marker-unknow.png',
+      iconUrl: './images/marker-unknow.png',
 
       iconSize: [21, 30], // size of the icon
       iconAnchor: [10.5, 28]
   });
 	markerKnown = L.icon({
-      iconUrl: './assets/images/marker-known.png',
+      iconUrl: './images/marker-known.png',
 
       iconSize: [21, 30], // size of the icon
       iconAnchor: [10.5, 28]

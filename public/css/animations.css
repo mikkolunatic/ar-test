@@ -1,0 +1,34 @@
+#marker-found.spinning .rnd-img-container{
+  -webkit-animation-name: spinner;
+-webkit-animation-timing-function: linear;
+-webkit-animation-duration: .8s;
+-webkit-animation-fill-mode: forwards;
+animation-name: spinner;
+animation-timing-function: linear;
+animation-fill-mode: forwards;
+animation-duration: .8s;
+transform-style: preserve-3d;
+}
+@-webkit-keyframes spinner {
+    from {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    to
+    {
+        transform: rotateY(-360deg);
+        opacity: 0;
+    }
+}
+@keyframes spinner {
+    from {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    to
+    {
+        transform: rotateY(-360deg);
+        opacity: 0;
+    }
+}
+

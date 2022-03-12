@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/functions.js": "/js/functions.js",
+    "/js/getToken.js": "/js/getToken.js",
+    "/js/map.js": "/js/map.js",
+    "/js/showPopup.js": "/js/showPopup.js",
+    "/js/views.js": "/js/views.js",
+    "/css/style.css": "/css/style.css",
+    "/css/popup.css": "/css/popup.css",
+    "/css/general.css": "/css/general.css",
+    "/css/animations.css": "/css/animations.css",
     "/css/app.css": "/css/app.css"
 }

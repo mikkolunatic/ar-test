@@ -14,8 +14,17 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
-        require('tailwindcss'),
-    ]);
+        require('tailwindcss')
+    ])
+    .css('resources/css/animations.css', 'public/css')
+    .css('resources/css/general.css', 'public/css')
+    .css('resources/css/popup.css', 'public/css')
+    .css('resources/css/style.css', 'public/css')
+    .js('resources/js/functions.js', 'public/js')
+    .js('resources/js/getToken.js', 'public/js')
+    .js('resources/js/map.js', 'public/js')
+    .js('resources/js/showPopup.js', 'public/js')
+    .js('resources/js/views.js', 'public/js');
 
 if (mix.inProduction()) {
     mix.version();
