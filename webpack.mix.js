@@ -20,11 +20,13 @@ mix.js('resources/js/app.js', 'public/js')
     .css('resources/css/general.css', 'public/css')
     .css('resources/css/popup.css', 'public/css')
     .css('resources/css/style.css', 'public/css')
-    .js('resources/js/functions.js', 'public/js')
-    .js('resources/js/getToken.js', 'public/js')
-    .js('resources/js/map.js', 'public/js')
-    .js('resources/js/showPopup.js', 'public/js')
-    .js('resources/js/views.js', 'public/js');
+    .combine([
+        'resources/js/functions.js',
+        'resources/js/views.js',
+        'resources/js/map.js',
+        'resources/js/getToken.js',
+        'resources/js/showPopup.js'
+    ], 'public/js/app.js');
 
 if (mix.inProduction()) {
     mix.version();
