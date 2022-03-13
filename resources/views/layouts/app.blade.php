@@ -12,24 +12,16 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/animations.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/general.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/popup.css') }}">
         <link rel="stylesheet" href="{{ mix('css/style.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/general.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/animations.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/popup.css') }}">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
             integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
             crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 
         @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-        <script src="{{ mix('js/functions.js') }}" defer></script>
-        <script src="{{ mix('js/getToken.js') }}" defer></script>
-        <script src="{{ mix('js/map.js') }}" defer></script>
-        <script src="{{ mix('js/showPopup.js') }}" defer></script>
-        <script src="{{ mix('js/views.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -58,5 +50,13 @@
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/views.js') }}" defer></script>
+        <script src="{{ mix('js/map.js') }}" defer></script>
+        <script src="{{ mix('js/functions.js') }}" defer></script>
+        <script src="{{ mix('js/getToken.js') }}" defer></script>
+        <script src="{{ mix('js/showPopup.js') }}" defer></script>
     </body>
 </html>
