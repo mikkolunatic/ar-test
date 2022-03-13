@@ -25,11 +25,6 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
-        <script src="{{ mix('js/functions.js') }}" defer></script>
-        <script src="{{ mix('js/getToken.js') }}" defer></script>
-        <script src="{{ mix('js/map.js') }}" defer></script>
-        <script src="{{ mix('js/showPopup.js') }}" defer></script>
-        <script src="{{ mix('js/views.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
