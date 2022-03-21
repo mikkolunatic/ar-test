@@ -22,12 +22,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 
         @livewireStyles
-<<<<<<< HEAD
-=======
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
->>>>>>> b0eca1e342bf669ab73d7e36644b288fc21bac9b
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -59,10 +53,5 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
-        <script src="{{ mix('js/views.js') }}" defer></script>
-        <script src="{{ mix('js/map.js') }}" defer></script>
-        <script src="{{ mix('js/functions.js') }}" defer></script>
-        <script src="{{ mix('js/getToken.js') }}" defer></script>
-        <script src="{{ mix('js/showPopup.js') }}" defer></script>
     </body>
 </html>
